@@ -1,0 +1,26 @@
+# Configure this Discovery Server
+eureka:
+  instance:
+#    hostname: discovery
+    prefer-ip-address: true
+  client:  # Not a client, don't register with yourself
+    registerWithEureka: false
+    fetchRegistry: false
+    server:
+        waitTimeInMsWhenSyncEmpty: 0
+     
+server:
+  port: 8761   # HTTP (Tomcat) port
+
+# Discovery Server Dashboard uses FreeMarker.  Don't want Thymeleaf templates
+spring:
+  application:
+    name: discovery
+  thymeleaf:
+    enabled: false     # Disable Thymeleaf 
+#  cloud:
+#    config:
+#      uri: http://configuration:8888
+#      fail-fast: true
+#      password: ${CONFIG_SERVICE_PASSWORD}
+#      username: user
