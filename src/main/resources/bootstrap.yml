@@ -1,7 +1,7 @@
 # Configure this Discovery Server
 eureka:
   instance:
-#    hostname: discovery
+    hostname: discovery
     prefer-ip-address: true
   client:  # Not a client, don't register with yourself
     registerWithEureka: false
